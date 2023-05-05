@@ -11,8 +11,8 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: postgres://lnkb:lnkb@postgres:5432/lnkb
-    
+      DATABASE_URL: postgres://lnkb:lnkb@localhost:5432/lnkb
+
     services:
       postgres:
         image: postgres
@@ -24,6 +24,8 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 5432:5432
             
     steps:
     - uses: actions/checkout@v3
