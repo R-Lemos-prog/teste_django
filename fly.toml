@@ -28,6 +28,9 @@ processes = []
     handlers = ["tls", "http"]
     port = 443
 
+[deploy]
+  release_command = "python manage.py migrate --noinput"
+
 #[[statics]]
 #  guest_path = "/code/public"
 #  url_prefix = "/static/"
