@@ -10,6 +10,7 @@ on:
 
 jobs:
   ci:
+    name: Integração contínua
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: postgres://lnkb:lnkb@localhost:5432/lnkb
@@ -49,7 +50,7 @@ jobs:
         python manage.py test
 
   deploy:
-    name: Deploy app
+    name: Deploy 
     runs-on: ubuntu-latest
     needs: ci
     env:
