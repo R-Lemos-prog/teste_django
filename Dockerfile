@@ -15,9 +15,6 @@ RUN set -ex && \
 
 COPY . /app/
 
-# RUN python manage.py collectstatic --noinput
-
 EXPOSE 8000
 
-# replace demo.wsgi with <project_name>.wsgi
 ENTRYPOINT ["./start.sh"] 

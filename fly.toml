@@ -28,6 +28,12 @@ processes = []
     handlers = ["tls", "http"]
     port = 443
 
-#[[statics]]
-#  guest_path = "/code/public"
-#  url_prefix = "/static/"
+  [[services.top_checks]]
+    grace_period = "1s"
+    interval = "1s"
+    restart_limit = 0
+    timeout = "2s"
+
+[[statics]]
+  guest_path = "/app/public"
+  url_prefix = "/static/"
